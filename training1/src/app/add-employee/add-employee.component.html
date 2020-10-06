@@ -1,0 +1,84 @@
+
+<div class=header>
+    <img class="img" src="../assets/images/logo.png"> 
+    <h1> Employee Training Management Portal</h1>
+</div>
+
+<app-sidebar></app-sidebar>
+
+
+<div class="container-fluid eform">
+    <form class="form1" #userform="ngForm" id="employeeform">
+        <div class="form-group">
+            <label>Employee Id*</label>
+            <input type="text" class="form-control" name="id" [(ngModel)]="employeeModel.id">
+        </div>
+        <div class="form-group">
+            <label class="name" >First Name*</label>
+            <input type="text" class="form-control" name="fname" [(ngModel)]="employeeModel.fname">
+        </div>
+        <div class="form-group">
+            <label class="name" >Middle Name*</label>
+            <input type="text" class="form-control" name="mname" [(ngModel)]="employeeModel.mname">
+        </div>
+        <div class="form-group">
+            <label class="name" >Last Name*</label>
+            <input type="text" class="form-control" name="lname" [(ngModel)]="employeeModel.lname">
+        </div>
+        <div class="form-group">
+            <label class="name" >Email*</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="employeeModel.email">
+        </div>
+        <div class="form-group">
+            <label class="name" >DOB*</label>
+            <input type="date" class="form-control" name="date" [(ngModel)]="date">
+        </div>
+        <div class="form-group">
+            <label class="name" >City*</label>
+            <input type="text" class="form-control" name="city" [(ngModel)]="employeeModel.city">
+        </div>
+        <div class="form-group">
+            <label class="name" >Contact No*</label>
+            <input type="tel" class="form-control" name="phone" [(ngModel)]="employeeModel.phone">
+        </div>
+    </form>
+    
+</div>
+
+<nav class="navbar">
+    <button type="button" class="btn btn-primary navbutton" type="submit" (click)="onClick($event) ; clearForm()">Save</button>
+    <button type="button" class="btn btn-primary navbutton" (click) = "onClick1($event)">Cancel</button>
+</nav>
+
+<div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal body -->
+        <div class="modal-body">
+            Employee has been added successfully
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "hide()">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="myModal" [style.display]="showModal1 ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal body -->
+        <div class="modal-body">
+            There has been some issue in adding the employee<br>
+                           or <br>
+                  Employee already exists<br>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "hide1() ; btnClick()">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>

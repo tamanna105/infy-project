@@ -1,0 +1,29 @@
+<div class=header>
+    <img class="img" src="../assets/images/logo.png"> 
+    <h1> Employee Training Management Portal</h1>
+</div>
+
+<app-sidebar></app-sidebar>
+
+<div class="container-fluid eform">
+    <form class="form1" >
+        <div class="form-group">
+            <label>Employee Id*</label>
+            <input type="text" class="form-control" name="id" placeholder="Enter Id here" [(ngModel)]="id">
+        </div>
+        <nav class="navbar">
+            <button type="button" class="btn btn-primary navbutton" type="submit" (click)="onClick($event)">Remove</button>
+            <button type="button" class="btn btn-primary navbutton" (click) ="onClick1($event)" >Back</button>
+        </nav>
+    </form>
+</div>
+<div class="container-fluid box1"  [style.display]="showModal ? 'block' : 'none'">
+    <p class="success">Employee with Employee id {{id}}  has been removed successfully</p>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "hide()">Close</button>
+
+</div>
+<div class="container-fluid box2" [style.display]="showModal1 ? 'block' : 'none'">
+    <p class="failure">Employee with Employee id {{id}}  could not be found</p>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "hide1()">Close</button>
+
+</div>

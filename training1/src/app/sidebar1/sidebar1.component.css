@@ -1,0 +1,22 @@
+.wrapper
+{
+    background-color: black;
+    float : left;
+    width: 20%;
+    height: 650px;
+}
+.btn-employee
+{
+    margin : 20px;
+    margin-left: 0;
+    border-radius: 0px;
+    background-color: #65757d;
+    width : 80%;
+}
+.btn-training
+{
+    margin : 20px;
+    margin-left: 0;
+    border-radius: 0px;
+    width : 80%;
+}

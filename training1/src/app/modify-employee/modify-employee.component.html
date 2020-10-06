@@ -1,0 +1,72 @@
+<div class=header>
+    <img class="img" src="../assets/images/logo.png"> 
+    <h1> Employee Training Management Portal</h1>
+</div>
+
+<app-sidebar></app-sidebar>
+
+<div class="container-fluid eform">
+    <form class="form1" >
+        <div class="form-group">
+            <label>Employee Id*</label>
+            <input type="text" class="form-control" name="id" placeholder="Enter Id here">
+        </div>
+        <nav class="navbar">
+            <button type="button" class="btn btn-primary navbutton" type="submit" (click) = "onClick($event) ; onClick1($event)" >Modify</button>
+            <button type="button" class="btn btn-primary navbutton" routerLink="/employee-list" >Back</button>
+        </nav>
+    </form>
+</div>
+<div class="container-fluid eform1" [style.display]="showModal ? 'block' : 'none'">
+    <form class="form1" #userform="ngForm" id="employeeform">
+        <div class="form-group">
+            <label>Employee Id*</label>
+            <input type="text" readonly class="form-control disabled" name="id" [(ngModel)]="employeeModel.id" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label class="name" >First Name*</label>
+            <input type="text" readonly class="form-control disabled" name="fname" [(ngModel)]="employeeModel.fname" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label class="name" >Middle Name*</label>
+            <input type="text" class="form-control" name="mname" [(ngModel)]="employeeModel.mname">
+        </div>
+        <div class="form-group">
+            <label class="name" >Last Name*</label>
+            <input type="text" class="form-control" name="lname" [(ngModel)]="employeeModel.lname">
+        </div>
+        <div class="form-group">
+            <label class="name" >Email*</label>
+            <input type="email" readonly class="form-control disabled" name="email" [(ngModel)]="employeeModel.email" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label class="name" >DOB*</label>
+            <input type="text" readonly class="form-control disabled" name="date" [(ngModel)]="str" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label class="name" >City*</label>
+            <input type="text" class="form-control" name="city" [(ngModel)]="employeeModel.city">
+        </div>
+        <div class="form-group">
+            <label class="name" >Contact No*</label>
+            <input type="tel" class="form-control" name="phone" [(ngModel)]="employeeModel.phone">
+        </div>
+    </form>
+
+</div>
+<nav class="navbar1" [style.display]="showModal1 ? 'block' : 'none'">
+    <button type="button" class="btn btn-primary navbutton link" (click)="onClick2($event)">Save</button>
+    <button type="button" class="btn btn-primary navbutton link" (click)="hide() ; hide1()">Cancel</button>
+</nav>
+
+<div class="modal" id="myModal" [style.display]="showModal2 ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal body -->
+        <div class="modal-body">
+            Employee details has been updated successfully
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "hide2() ; hide() ; hide1()">Close</button>
+        </div>
